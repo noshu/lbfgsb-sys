@@ -1,0 +1,9 @@
+[package]
+name = "lbfgs-sys"
+version = "0.1.0"
+authors = ["noshu <naushad1290@gmail.com>"]
+build = "build.rs"
+[features]
+static = []
+[dependencies]
+libc = "0.2.11"
