@@ -7,6 +7,7 @@ LBFGSB  = lbfgsb.f
 LINPACK = linpack.f
 BLAS    = blas.f
 TIMER   = timer.f
+STRING = string.f
 static : 
 	@echo "static linking selected"
 	@echo "Compiling"
@@ -14,6 +15,7 @@ static :
 	$(FC) $(LINPACK) $(FFLAGS) $(OUTPUT)/linpack.o
 	$(FC) $(BLAS) $(FFLAGS) $(OUTPUT)/blas.o
 	$(FC) $(TIMER) $(FFLAGS) $(OUTPUT)/timer.o
+	$(FC) $(STRING) $(FFLAGS) $(OUTPUT)/string.o
 	@echo "creating static library"
 	$(AR) $(AFLAG) $(OUTPUT)/liblbfgs.a $(OUTPUT)/*.o
 dylib :
@@ -24,6 +26,7 @@ ifeq ($(OSNAME),Windows)
 	$(FC) $(LINPACK) $(FFLAGS) $(OUTPUT)/linpack.o
 	$(FC) $(BLAS) $(FFLAGS) $(OUTPUT)/blas.o
 	$(FC) $(TIMER) $(FFLAGS) $(OUTPUT)/timer.o
+    $(FC) $(STRING) $(FFLAGS) $(OUTPUT)/string.o
 	@echo "creating static library"
 	$(FC) $(SFlAG) $(OUTPUT)/liblbfgs.dll $(OUTPUT)/*.o
 endif
@@ -35,6 +38,7 @@ ifeq ($(OSNAME),Linux)
 	$(FC) $(LINPACK) $(FFLAGS) $(OUTPUT)/linpack.o
 	$(FC) $(BLAS) $(FFLAGS) $(OUTPUT)/blas.o
 	$(FC) $(TIMER) $(FFLAGS) $(OUTPUT)/timer.o
+	$(FC) $(STRING) $(FFLAGS) $(OUTPUT)/string.o
 	@echo "creating static library"
 	$(FC) $(SFlAG) $(OUTPUT)/liblbfgs.so $(OUTPUT)/*.o
 endif
@@ -45,6 +49,7 @@ ifeq ($(OSNAME),Macos)
 	$(FC) $(LINPACK) $(FFLAGS) $(OUTPUT)/linpack.o
 	$(FC) $(BLAS) $(FFLAGS) $(OUTPUT)/blas.o
 	$(FC) $(TIMER) $(FFLAGS) $(OUTPUT)/timer.o
+	$(FC) $(STRING) $(FFLAGS) $(OUTPUT)/string.o
 	@echo "creating static library"
 	$(FC) $(SFlAG) $(OUTPUT)/liblbfgs.dylib $(OUTPUT)/*.o
 endif
