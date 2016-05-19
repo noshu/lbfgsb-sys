@@ -495,7 +495,7 @@ c     ************
       parameter        (one=1.0d0,zero=0.0d0)
       
       if (task .eq. 'START') then
-
+         print*,"hey um equalt to start"
          epsmch = epsilon(one)
 
          call timer(time1)
