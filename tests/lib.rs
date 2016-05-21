@@ -1,7 +1,7 @@
-extern crate lbfgs_sys;
+extern crate lbfgsb_sys;
 #[test]
 fn timer(){
-    use lbfgs_sys::timer as ffi;
+    use lbfgsb_sys::timer as ffi;
     let mut time  = 0.0;
     unsafe{
         ffi::timer_(&mut time);

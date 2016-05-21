@@ -1,4 +1,4 @@
 extern crate libc;
 pub mod timer;
-pub mod lbfgs;
+pub mod lbfgsb;
 pub mod string;

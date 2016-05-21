@@ -1,6 +1,6 @@
 [package]
-name = "lbfgs-sys"
-version = "0.1.0"
+name = "lbfgsb-sys"
+version = "0.1.2"
 authors = ["noshu <naushad1290@gmail.com>"]
 build = "build.rs"
 [features]
