@@ -1,9 +1,12 @@
 [package]
 name = "lbfgsb-sys"
-version = "0.1.2"
+version = "0.1.0"
 authors = ["noshu <naushad1290@gmail.com>"]
+description = "The package provides an interface to L-BFGS-B fortran routine"
+homepage = "https://github.com/noshu/lbfgsb-sys"
+repository = "https://github.com/noshu/lbfgsb-sys"
 build = "build.rs"
 [features]
 static = []
 [dependencies]
-libc = "0.2.11"
+libc = "*"
