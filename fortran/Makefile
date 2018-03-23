@@ -1,5 +1,3 @@
-FC = gfortran
-AR = ar
 AFLAG = crus
 SFlAG = -shared -o
 FFLAGS = -O3 -Wall -fexceptions -g -Wno-uninitialized -c -fPIC -o
@@ -8,7 +6,7 @@ LINPACK = linpack.f
 BLAS    = blas.f
 TIMER   = timer.f
 STRING = string.f
-static : 
+static :
 	@echo "static linking selected"
 	@echo "Compiling"
 	$(FC) $(LBFGSB) $(FFLAGS) $(OUTPUT)/lbfgsb.o
