@@ -29,6 +29,8 @@ fn main() {
     println!("cargo:rustc-link-search={}", output.display());
     println!("cargo:rustc-link-lib={}=lbfgs",kind);
     println!("cargo:rustc-link-lib=dylib=gfortran");
+    println!("cargo:rustc-link-lib=dylib=gcc");
+    println!("cargo:rustc-link-lib=dylib=quadmath");
 }
 fn run(command: &mut Command) {
     println!("Running: {:?}", command);
