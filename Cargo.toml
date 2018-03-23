@@ -1,7 +1,8 @@
 [package]
 name = "lbfgsb-sys"
-version = "0.1.0"
-authors = ["noshu <naushad1290@gmail.com>"]
+version = "0.1.1"
+authors = ["noshu <naushad1290@gmail.com>",
+           "Felix C. Morency <felix.morency@imeka.ca>"]
 license= "MIT/BSD-3-Clause"
 description = "The package provides an interface to L-BFGS-B fortran routine"
 homepage = "https://github.com/noshu/lbfgsb-sys"
