@@ -39,10 +39,10 @@ fn main() {
                               .arg("-print-file-name=libgfortran.a")
                               .output()
                               .expect("Failed to find libgfortran.a");
-        let fc_stdout = String::from_utf8_lossy(&fc_out.stdout);
+        let fc_stdout = String::from_utf8(fc_out.stdout).expect("Invalid path to libgfortran.a");
         let fc_lib_cwd = PathBuf::from(fc_stdout.to_string());
         let fc_lib_pwd = fc_lib_cwd.parent().expect("Path to libgfortran.a not found");
-        println!("cargo:rustc-link-search={}", fc_lib_pwd.to_str().unwrap());
+        println!("cargo:rustc-link-search={:?}", fc_lib_pwd);
     }
 
     println!("cargo:rustc-link-lib={}=gfortran", fc_lib_type);
