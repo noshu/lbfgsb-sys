@@ -19,7 +19,8 @@ fn main() {
     let os = if cfg!(target_os = "macos"){"Macos"}
              else if cfg!(target_os = "windows"){"Windows"}
              else {"Linux"};
-    run(Command::new("make")
+    let make_cmd = if os == "Windows" { "mingw32-make" } else { "make" };
+    run(Command::new(make_cmd)
                 .arg(kind)
                 .arg(format!("OUTPUT={}", output.display()))
                 .arg(format!("OSNAME={}", os))
