@@ -47,7 +47,10 @@ fn main() {
     }
 
     println!("cargo:rustc-link-lib={}=gfortran", fc_lib_type);
-    println!("cargo:rustc-link-lib={}=quadmath", fc_lib_type);
+
+    if target == "x86_64-apple-darwin" {
+        println!("cargo:rustc-link-lib={}=quadmath", fc_lib_type);
+    }
 }
 fn run(command: &mut Command) {
     println!("Running: {:?}", command);
