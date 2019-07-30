@@ -1,5 +1,3 @@
-FC = gfortran
-AR = ar
 AFLAG = crus
 SFlAG = -shared -o
 FFLAGS = -O3 -Wall -fexceptions -g -Wno-uninitialized -c -fPIC -o
@@ -8,7 +6,7 @@ LINPACK = linpack.f
 BLAS    = blas.f
 TIMER   = timer.f
 STRING = string.f
-static : 
+static :
 	@echo "static linking selected"
 	@echo "Compiling"
 	$(FC) $(LBFGSB) $(FFLAGS) $(OUTPUT)/lbfgsb.o
@@ -26,7 +24,7 @@ ifeq ($(OSNAME),Windows)
 	$(FC) $(LINPACK) $(FFLAGS) $(OUTPUT)/linpack.o
 	$(FC) $(BLAS) $(FFLAGS) $(OUTPUT)/blas.o
 	$(FC) $(TIMER) $(FFLAGS) $(OUTPUT)/timer.o
-    $(FC) $(STRING) $(FFLAGS) $(OUTPUT)/string.o
+	$(FC) $(STRING) $(FFLAGS) $(OUTPUT)/string.o
 	@echo "creating static library"
 	$(FC) $(SFlAG) $(OUTPUT)/liblbfgs.dll $(OUTPUT)/*.o
 endif
